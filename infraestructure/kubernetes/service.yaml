@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pdatatrigger-backend-service
+spec:
+  selector:
+    app: pdatatrigger-backend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
+  type: LoadBalancer # Cambiar a ClusterIP si no estás en un entorno con LoadBalancer

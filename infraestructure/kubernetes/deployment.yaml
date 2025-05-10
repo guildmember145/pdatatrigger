@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pdatatrigger-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pdatatrigger-backend
+  template:
+    metadata:
+      labels:
+        app: pdatatrigger-backend
+    spec:
+      containers:
+        - name: backend
+          image: your-dockerhub/pdatatrigger-backend:latest # Reemplaza
+          ports:
+            - containerPort: 8000
+          # Env vars, etc.
